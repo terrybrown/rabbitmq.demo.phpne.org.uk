@@ -1,0 +1,8 @@
+#!/usr/bin/env php
+<?php
+use PHPNE\Demo\Console;
+
+$container = include __DIR__ . '/../app/container.php';
+$console = new Console\Application;
+$console->add($container['console.command.log.generate']);
+$console->run();

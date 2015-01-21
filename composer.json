@@ -1,0 +1,19 @@
+{
+    "require": {
+        "symfony/console": "2.5.*",
+        "pimple/pimple": "3.*",
+        "videlalvaro/php-amqplib": "2.*",
+        "monolog/monolog": "~1.12"
+    },
+    "require-dev": {
+        "phpmd/phpmd": "1.4.*",
+        "pdepend/pdepend": "~1.1",
+        "fabpot/php-cs-fixer": "0.*",
+        "phing/phing": "2.8.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPNE\\Demo\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Rabbit MQ Demo" default="Welcome">
+    
+    <property file="build.properties" />
+
+    <fileset dir="./src" id="src">
+        <include name="**/*.php"/>
+    </fileset>
+    
+    <target name="Welcome">
+        <echo msg="You must execute Phing with a build target, use the `-l` parameter to view available targets." />
+    </target>
+    
+    <target name="phpcs" description="Analyzes the PHP source code and tries to fix coding standards issues">
+        <exec
+            passthru="${passthru}"
+            command="./vendor/bin/php-cs-fixer --verbose fix --level=all ./src"
+        />
+    </target>
+    
+    <target name="phplint" description="Checks the PHP source code for basic syntax errors">
+        <phplint>
+            <fileset refid="src" />
+        </phplint>
+    </target>
+    
+    <target name="phpmd" description="PHPMD takes a given PHP source code base and look for several potential problems within that source">
+        <phpmd rulesets="codesize,naming,unusedcode">
+            <fileset refid="src" />
+        </phpmd>
+    </target>
+
+</project>
