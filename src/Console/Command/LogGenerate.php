@@ -51,7 +51,7 @@ class LogGenerate extends Command
 
             $this->logger->log($input->getArgument('exchange'), $level, $message);
 
-            $output->writeln(sprintf('#%06d <info>%s</info>] %s', $entry, Logger::getLevelName($level), $message));
+            $output->writeln(sprintf('#%06d <info>%s</info> %s', $entry, Logger::getLevelName($level), $message));
         }
     }
 
